@@ -364,21 +364,22 @@ function AartiSection() {
           <div className="section-divider mt-5"></div>
         </div>
 
-        <div className="text-center">
-          <div className="inline-flex items-center space-x-3 glossy-card px-8 py-5 animate-border-glow mb-8">
-            <span className="text-3xl animate-pendulum">🪔</span>
-            <span className="text-yellow-400 font-bold text-3xl md:text-4xl animate-clock-tick" style={{ fontFamily: "'Playfair Display', serif" }}>
+        <div className="flex flex-col md:flex-row items-center justify-center gap-4 mb-8">
+          <div className="inline-flex items-center space-x-3 glossy-card px-6 py-4 animate-border-glow">
+            <span className="text-2xl animate-pendulum">🪔</span>
+            <span className="text-yellow-400 font-bold text-2xl md:text-3xl animate-clock-tick" style={{ fontFamily: "'Playfair Display', serif" }}>
               7:30 PM
             </span>
-            <span className="text-3xl animate-pendulum" style={{ animationDelay: '1s' }}>🪔</span>
+            <span className="text-2xl animate-pendulum" style={{ animationDelay: '1s' }}>🪔</span>
           </div>
 
           <button
             onClick={() => setShowDetails(!showDetails)}
-            className="btn-golden mt-6"
+            className="btn-golden"
           >
-            {showDetails ? 'Hide Details' : 'View Details'} ✨
+            {showDetails ? '✕ Hide Details' : '✨ View Details'}
           </button>
+        </div>
 
           {showDetails && (
             <div className="mt-8 space-y-6 animate-fadeInUp">
@@ -410,7 +411,6 @@ function AartiSection() {
               </div>
             </div>
           )}
-        </div>
       </div>
     </section>
   );
@@ -434,13 +434,22 @@ function PrasadSection() {
           <div className="section-divider mt-5"></div>
         </div>
 
-        <div className="text-center">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-4 mb-8">
+          <div className="inline-flex items-center space-x-3 glossy-card px-6 py-4 animate-border-glow">
+            <span className="text-2xl animate-pendulum">🍲</span>
+            <span className="text-yellow-400 font-bold text-xl md:text-2xl" style={{ fontFamily: "'Playfair Display', serif" }}>
+              દિવ્ય પ્રસાદ
+            </span>
+            <span className="text-2xl animate-pendulum" style={{ animationDelay: '1s' }}>🍲</span>
+          </div>
+
           <button
             onClick={() => setShowDetails(!showDetails)}
-            className="btn-golden mt-6"
+            className="btn-golden"
           >
-            {showDetails ? 'Hide Details' : 'View Prasad Menu'} 🍽️
+            {showDetails ? '✕ Hide' : '🍽️ View Menu'}
           </button>
+        </div>
 
           {showDetails && (
             <div className="mt-8 space-y-4 animate-fadeInUp">
@@ -485,7 +494,6 @@ function PrasadSection() {
               </p>
             </div>
           )}
-        </div>
       </div>
     </section>
   );
@@ -509,21 +517,22 @@ function GarbaSection() {
           <div className="section-divider mt-5"></div>
         </div>
 
-        <div className="text-center">
-          <div className="inline-flex items-center space-x-4 glossy-card px-8 py-5 animate-border-glow mb-8">
-            <span className="text-3xl animate-diya">💃</span>
-            <span className="text-yellow-400 font-bold text-3xl md:text-4xl animate-clock-tick" style={{ fontFamily: "'Playfair Display', serif" }}>
+        <div className="flex flex-col md:flex-row items-center justify-center gap-4 mb-8">
+          <div className="inline-flex items-center space-x-3 glossy-card px-6 py-4 animate-border-glow">
+            <span className="text-2xl animate-diya">💃</span>
+            <span className="text-yellow-400 font-bold text-2xl md:text-3xl animate-clock-tick" style={{ fontFamily: "'Playfair Display', serif" }}>
               10:30 PM
             </span>
-            <span className="text-3xl animate-diya" style={{ animationDelay: '1s' }}>🕺</span>
+            <span className="text-2xl animate-diya" style={{ animationDelay: '1s' }}>🕺</span>
           </div>
 
           <button
             onClick={() => setShowDetails(!showDetails)}
-            className="btn-golden mt-6"
+            className="btn-golden"
           >
-            {showDetails ? 'Hide Details' : 'View Garba Details'} 💃
+            {showDetails ? '✕ Hide' : '💃 View Details'}
           </button>
+        </div>
 
           {showDetails && (
             <div className="mt-8 space-y-4 animate-fadeInUp">
@@ -566,7 +575,6 @@ function GarbaSection() {
               <p className="text-yellow-100/40 mt-4 text-sm">Garba starts after Aarti ceremony every night</p>
             </div>
           )}
-        </div>
       </div>
     </section>
   );
@@ -697,20 +705,20 @@ function LocationSection() {
             </div>
           </div>
 
-          <div className="flex flex-col justify-center items-center space-y-6">
-            <div className="glossy-card p-2 w-full animate-pulse-glow">
+          <div className="flex flex-col justify-center items-center space-y-4">
+            <div className="glossy-card p-2 w-full max-w-sm animate-pulse-glow">
               <iframe 
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.151564796195!2d72.56312717625987!3d23.0549043151191!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e8569c5f49f83%3A0x197806e0ebacb2ee!2sPurusharthi%20Nagar%20Society!5e0!3m2!1sen!2sin!4v1789918330065!5m2!1sen!2sin" 
                 width="100%" 
-                height="300" 
-                style={{ border: 0, borderRadius: '16px' }}
+                height="200" 
+                style={{ border: 0, borderRadius: '12px' }}
                 allowFullScreen 
                 loading="lazy" 
                 referrerPolicy="strict-origin-when-cross-origin"
                 title="Location Map"
               ></iframe>
             </div>
-            <a href="https://maps.google.com/?q=Purusharthi+Nagar+Society" target="_blank" rel="noopener noreferrer" className="btn-golden w-full text-center block">
+            <a href="https://maps.google.com/?q=Purusharthi+Nagar+Society" target="_blank" rel="noopener noreferrer" className="btn-golden text-center">
               📍 Get Directions
             </a>
           </div>
@@ -825,6 +833,99 @@ function MarqueeBanner() {
   );
 }
 
+// ============ PAYMENT SECTION ============
+function PaymentSection() {
+  const handlePayment = () => {
+    const options = {
+      key: 'rzp_test_YourTestKeyHere', // Replace with your Razorpay test key
+      amount: 250000, // Amount in paise (₹2500 = 250000 paise)
+      currency: 'INR',
+      name: 'Navratri 2026 - Purusharthi Nagar Society',
+      description: 'Navratri Celebration Contribution',
+      handler: function (response: any) {
+        alert(`Payment Successful! Payment ID: ${response.razorpay_payment_id}`);
+      },
+      prefill: {
+        name: '',
+        email: '',
+        contact: ''
+      },
+      theme: {
+        color: '#FFD700'
+      }
+    };
+
+    const rzp = new (window as any).Razorpay(options);
+    rzp.open();
+  };
+
+  return (
+    <section className="py-28 relative">
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0d0505] via-[#150808] to-[#0d0505]"></div>
+      <Particles count={15} />
+
+      <div className="relative z-10 max-w-3xl mx-auto px-6">
+        <div className="text-center mb-16">
+          <h2 className="text-2xl md:text-4xl font-bold gradient-text mb-3" style={{ fontFamily: "'Playfair Display', serif" }}>
+            💳 Payment & Contribution 💳
+          </h2>
+          <p className="text-yellow-100/50 text-sm md:text-base">Support the grand celebration</p>
+          <div className="section-divider mt-5"></div>
+        </div>
+
+        <div className="glossy-card p-8 md:p-10 text-center animate-pulse-glow">
+          <div className="mb-6">
+            <span className="text-5xl md:text-6xl animate-glow-pulse">🙏</span>
+          </div>
+
+          <h3 className="text-xl md:text-2xl font-bold text-yellow-400 mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>
+            Navratri Celebration Contribution
+          </h3>
+
+          <div className="mb-8">
+            <p className="text-yellow-100/60 text-sm mb-2">Contribution Amount</p>
+            <div className="inline-flex items-center space-x-2 glossy-card px-6 py-4">
+              <span className="text-3xl md:text-4xl font-black text-yellow-400" style={{ fontFamily: "'Playfair Display', serif" }}>
+                ₹2,500
+              </span>
+            </div>
+          </div>
+
+          <div className="space-y-4 mb-8">
+            <div className="flex items-center space-x-3 text-left">
+              <span className="text-yellow-400">✓</span>
+              <p className="text-yellow-100/70 text-sm">Support grand pandal decoration</p>
+            </div>
+            <div className="flex items-center space-x-3 text-left">
+              <span className="text-yellow-400">✓</span>
+              <p className="text-yellow-100/70 text-sm">Contribute to daily aarti & prasad</p>
+            </div>
+            <div className="flex items-center space-x-3 text-left">
+              <span className="text-yellow-400">✓</span>
+              <p className="text-yellow-100/70 text-sm">Help organize garba nights</p>
+            </div>
+            <div className="flex items-center space-x-3 text-left">
+              <span className="text-yellow-400">✓</span>
+              <p className="text-yellow-100/70 text-sm">Support cultural programs</p>
+            </div>
+          </div>
+
+          <button
+            onClick={handlePayment}
+            className="btn-payment w-full md:w-auto"
+          >
+            💳 Pay ₹2,500 Now
+          </button>
+
+          <p className="text-yellow-100/40 text-xs mt-6">
+            Secure payment powered by Razorpay
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 // ============ FOOTER ============
 function Footer() {
   return (
@@ -903,6 +1004,7 @@ function App() {
           <ScheduleSection />
           <LocationSection />
           <OrganizerSection />
+          <PaymentSection />
           <Footer />
         </>
       )}
