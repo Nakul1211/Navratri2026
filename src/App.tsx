@@ -135,31 +135,31 @@ function HeroSection() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] md:w-[550px] md:h-[550px] rounded-full border border-red-500/5 animate-spin-slow" style={{ animationDirection: 'reverse' }}></div>
       <Particles count={35} />
 
-      <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
-        <div className="mb-6 animate-float">
-          <span className="text-7xl md:text-9xl text-yellow-400 animate-glow" style={{ fontFamily: "'Tiro Devanagari Hindi', serif" }}>ॐ</span>
+      <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
+        <div className="mb-8 animate-float">
+          <span className="text-6xl md:text-8xl text-yellow-400 animate-glow" style={{ fontFamily: "'Tiro Devanagari Hindi', serif" }}>ॐ</span>
         </div>
-        <h1 className="text-4xl md:text-7xl lg:text-8xl font-black mb-4 animate-fadeInUp" style={{ fontFamily: "'Playfair Display', serif" }}>
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 animate-fadeInUp" style={{ fontFamily: "'Playfair Display', serif" }}>
           <span className="gradient-text">Navratri</span>
           <br />
           <span className="text-yellow-400 animate-glow">2026</span>
         </h1>
-        <p className="text-xl md:text-3xl text-yellow-300/90 mb-3 animate-fadeInUp" style={{ animationDelay: '0.3s', fontFamily: "'Tiro Devanagari Hindi', serif" }}>
+        <p className="text-lg md:text-2xl text-yellow-300/80 mb-4 animate-fadeInUp" style={{ animationDelay: '0.3s', fontFamily: "'Tiro Devanagari Hindi', serif" }}>
           || सर्वमंगल मांगल्ये शिवे सर्वार्थ साधिके ||
         </p>
-        <p className="text-base md:text-xl text-yellow-100/60 mb-3 animate-fadeInUp" style={{ animationDelay: '0.5s' }}>
-          11 October – 19 October 2026 | Grand Society Celebration
+        <p className="text-sm md:text-base text-yellow-100/60 mb-3 animate-fadeInUp" style={{ animationDelay: '0.5s' }}>
+          11 October – 19 October 2026
         </p>
-        <p className="text-sm md:text-lg text-yellow-100/40 mb-8 animate-fadeInUp" style={{ animationDelay: '0.6s' }}>
+        <p className="text-xs md:text-sm text-yellow-100/40 mb-10 animate-fadeInUp" style={{ animationDelay: '0.6s' }}>
           Nine Divine Nights of Maa Durga's Blessings
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fadeInUp" style={{ animationDelay: '0.8s' }}>
-          <a href="#gallery" className="btn-golden">🎉 Explore Gallery</a>
-          <a href="#location" className="btn-outline-gold">📍 Visit Us</a>
+        <div className="flex flex-col sm:flex-row gap-3 justify-center animate-fadeInUp" style={{ animationDelay: '0.8s' }}>
+          <a href="#gallery" className="btn-golden">Explore Gallery</a>
+          <a href="#location" className="btn-outline-gold">Visit Us</a>
         </div>
-        <div className="flex justify-center mt-12 space-x-6">
+        <div className="flex justify-center mt-16 space-x-4">
           {['🪔', '🪔', '🪔', '🪔', '🪔'].map((d, i) => (
-            <span key={i} className="text-2xl md:text-3xl animate-diya" style={{ animationDelay: `${i * 0.4}s` }}>{d}</span>
+            <span key={i} className="text-xl md:text-2xl animate-diya" style={{ animationDelay: `${i * 0.4}s` }}>{d}</span>
           ))}
         </div>
       </div>
@@ -211,14 +211,14 @@ function CountdownClock() {
         <div className="absolute inset-0 w-40 h-40 rounded-full border border-yellow-400/10" style={{ animation: 'ripple 3s ease-out 2s infinite' }}></div>
       </div>
 
-      <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
-        <div className="mb-8">
-          <span className="text-5xl md:text-6xl animate-glow-pulse">⏰</span>
+      <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
+        <div className="mb-10">
+          <span className="text-4xl md:text-5xl animate-glow-pulse">⏰</span>
         </div>
-        <h2 className="text-2xl md:text-4xl font-bold gradient-text mb-3" style={{ fontFamily: "'Playfair Display', serif" }}>
+        <h2 className="text-xl md:text-3xl font-bold gradient-text mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>
           Countdown to Navratri 2026
         </h2>
-        <p className="text-yellow-100/50 mb-10 text-sm md:text-base">11 October 2026 • The Divine Beginning</p>
+        <p className="text-yellow-100/50 mb-12 text-xs md:text-sm">11 October 2026 • The Divine Beginning</p>
 
         <div className="flex justify-center items-center gap-3 md:gap-6 flex-wrap">
           {digits.map((item, i) => (
@@ -311,17 +311,17 @@ function MegaTitleSection() {
 // ============ PHOTO GALLERY (ONLY 1 PHOTO) ============
 function PhotoGallery() {
   return (
-    <section id="gallery" className="py-20 relative overflow-hidden">
+    <section id="gallery" className="py-28 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-[#0d0505] via-[#120606] to-[#0d0505]"></div>
       <Particles count={15} />
       
-      <div className="relative z-10 max-w-6xl mx-auto px-4">
-        <div className="text-center mb-14">
-          <h2 className="text-3xl md:text-5xl font-bold gradient-text mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>
+      <div className="relative z-10 max-w-5xl mx-auto px-6">
+        <div className="text-center mb-16">
+          <h2 className="text-2xl md:text-4xl font-bold gradient-text mb-3" style={{ fontFamily: "'Playfair Display', serif" }}>
             ✨ Photo Gallery ✨
           </h2>
-          <p className="text-yellow-100/50 text-lg">Divine moments captured in time</p>
-          <div className="section-divider mt-4"></div>
+          <p className="text-yellow-100/50 text-sm md:text-base">Divine moments captured in time</p>
+          <div className="section-divider mt-5"></div>
         </div>
 
         {/* Single Main Image */}
@@ -351,17 +351,17 @@ function AartiSection() {
   const [showDetails, setShowDetails] = useState(false);
 
   return (
-    <section id="aarti" className="py-20 relative overflow-hidden">
+    <section id="aarti" className="py-28 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-[#0d0505] via-[#1a0505] to-[#0d0505]"></div>
       <Particles count={20} />
 
-      <div className="relative z-10 max-w-4xl mx-auto px-4">
-        <div className="text-center mb-14">
-          <h2 className="text-3xl md:text-5xl font-bold gradient-text mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>
+      <div className="relative z-10 max-w-4xl mx-auto px-6">
+        <div className="text-center mb-16">
+          <h2 className="text-2xl md:text-4xl font-bold gradient-text mb-3" style={{ fontFamily: "'Playfair Display', serif" }}>
             🪔 Daily Aarti 🪔
           </h2>
-          <p className="text-yellow-100/50 text-lg">Sacred evening prayers</p>
-          <div className="section-divider mt-4"></div>
+          <p className="text-yellow-100/50 text-sm md:text-base">Sacred evening prayers</p>
+          <div className="section-divider mt-5"></div>
         </div>
 
         <div className="text-center">
@@ -421,17 +421,17 @@ function PrasadSection() {
   const [showDetails, setShowDetails] = useState(false);
 
   return (
-    <section id="prasad" className="py-20 relative overflow-hidden">
+    <section id="prasad" className="py-28 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-[#0d0505] via-[#100606] to-[#0d0505]"></div>
       <Particles count={15} />
 
-      <div className="relative z-10 max-w-4xl mx-auto px-4">
-        <div className="text-center mb-14">
-          <h2 className="text-3xl md:text-5xl font-bold gradient-text mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>
+      <div className="relative z-10 max-w-4xl mx-auto px-6">
+        <div className="text-center mb-16">
+          <h2 className="text-2xl md:text-4xl font-bold gradient-text mb-3" style={{ fontFamily: "'Playfair Display', serif" }}>
             🍲 દિવ્ય પ્રસાદ 🍲
           </h2>
-          <p className="text-yellow-100/50 text-lg">માતાજીના આશીર્વાદથી પ્રસાદ</p>
-          <div className="section-divider mt-4"></div>
+          <p className="text-yellow-100/50 text-sm md:text-base">માતાજીના આશીર્વાદથી પ્રસાદ</p>
+          <div className="section-divider mt-5"></div>
         </div>
 
         <div className="text-center">
@@ -496,17 +496,17 @@ function GarbaSection() {
   const [showDetails, setShowDetails] = useState(false);
 
   return (
-    <section id="garba" className="py-20 relative overflow-hidden">
+    <section id="garba" className="py-28 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-[#0d0505] via-[#150505] to-[#0d0505]"></div>
       <Particles count={25} />
 
-      <div className="relative z-10 max-w-4xl mx-auto px-4">
-        <div className="text-center mb-14">
-          <h2 className="text-3xl md:text-5xl font-bold gradient-text mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>
+      <div className="relative z-10 max-w-4xl mx-auto px-6">
+        <div className="text-center mb-16">
+          <h2 className="text-2xl md:text-4xl font-bold gradient-text mb-3" style={{ fontFamily: "'Playfair Display', serif" }}>
             💃 Garba Nights 💃
           </h2>
-          <p className="text-yellow-100/50 text-lg">Nine nights of divine dance & joy</p>
-          <div className="section-divider mt-4"></div>
+          <p className="text-yellow-100/50 text-sm md:text-base">Nine nights of divine dance & joy</p>
+          <div className="section-divider mt-5"></div>
         </div>
 
         <div className="text-center">
@@ -587,17 +587,17 @@ function ScheduleSection() {
   ];
 
   return (
-    <section id="schedule" className="py-20 relative">
+    <section id="schedule" className="py-28 relative">
       <div className="absolute inset-0 bg-gradient-to-b from-[#0d0505] via-[#100505] to-[#0d0505]"></div>
       <Particles count={15} />
 
-      <div className="relative z-10 max-w-5xl mx-auto px-4">
-        <div className="text-center mb-14">
-          <h2 className="text-3xl md:text-5xl font-bold gradient-text mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>
+      <div className="relative z-10 max-w-5xl mx-auto px-6">
+        <div className="text-center mb-16">
+          <h2 className="text-2xl md:text-4xl font-bold gradient-text mb-3" style={{ fontFamily: "'Playfair Display', serif" }}>
             📅 નવ દિવ્ય દિવસો 📅
           </h2>
-          <p className="text-yellow-100/50 text-lg">11 October – 19 October 2026</p>
-          <div className="section-divider mt-4"></div>
+          <p className="text-yellow-100/50 text-sm md:text-base">11 October – 19 October 2026</p>
+          <div className="section-divider mt-5"></div>
         </div>
 
         <div className="grid grid-cols-3 md:grid-cols-3 gap-3 md:gap-4">
@@ -645,16 +645,16 @@ function ScheduleSection() {
 // ============ LOCATION ============
 function LocationSection() {
   return (
-    <section id="location" className="py-20 relative">
+    <section id="location" className="py-28 relative">
       <div className="absolute inset-0 bg-gradient-to-b from-[#0d0505] via-[#100606] to-[#0d0505]"></div>
       <Particles count={10} />
 
-      <div className="relative z-10 max-w-5xl mx-auto px-4">
-        <div className="text-center mb-14">
-          <h2 className="text-3xl md:text-5xl font-bold gradient-text mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>
+      <div className="relative z-10 max-w-5xl mx-auto px-6">
+        <div className="text-center mb-16">
+          <h2 className="text-2xl md:text-4xl font-bold gradient-text mb-3" style={{ fontFamily: "'Playfair Display', serif" }}>
             📍 Visit Us 📍
           </h2>
-          <div className="section-divider mt-4"></div>
+          <div className="section-divider mt-5"></div>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
@@ -742,7 +742,7 @@ function OrganizerSection() {
   ];
 
   return (
-    <section id="team" className="py-20 md:py-28 relative overflow-hidden">
+    <section id="team" className="py-28 md:py-32 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-[#0d0505] via-[#150808] to-[#0d0505]"></div>
       
       <div className="absolute top-0 left-0 w-64 h-64 bg-yellow-400/5 rounded-full blur-3xl"></div>
@@ -750,21 +750,21 @@ function OrganizerSection() {
       
       <Particles count={20} />
 
-      <div className="relative z-10 max-w-6xl mx-auto px-4">
-        <div className="text-center mb-16">
-          <div className="flex justify-center items-center space-x-3 mb-6">
-            <span className="text-3xl md:text-4xl animate-diya">🪔</span>
-            <span className="text-4xl md:text-5xl animate-lotus-spin">🌺</span>
-            <span className="text-3xl md:text-4xl animate-diya" style={{ animationDelay: '1s' }}>🪔</span>
+      <div className="relative z-10 max-w-6xl mx-auto px-6">
+        <div className="text-center mb-20">
+          <div className="flex justify-center items-center space-x-3 mb-8">
+            <span className="text-2xl md:text-3xl animate-diya">🪔</span>
+            <span className="text-3xl md:text-4xl animate-lotus-spin">🌺</span>
+            <span className="text-2xl md:text-3xl animate-diya" style={{ animationDelay: '1s' }}>🪔</span>
           </div>
           
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-black gradient-text mb-4 animate-mega-pulse" style={{ fontFamily: "'Playfair Display', serif" }}>
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-black gradient-text mb-4 animate-mega-pulse" style={{ fontFamily: "'Playfair Display', serif" }}>
             આયોજક સમિતી
           </h2>
-          <p className="text-xl md:text-2xl text-yellow-400/80 mb-2" style={{ fontFamily: "'Tiro Devanagari Hindi', serif" }}>
+          <p className="text-lg md:text-xl text-yellow-400/80 mb-3" style={{ fontFamily: "'Tiro Devanagari Hindi', serif" }}>
             Organizing Committee
           </p>
-          <p className="text-yellow-100/40 text-sm md:text-base">The dedicated team behind this grand celebration</p>
+          <p className="text-yellow-100/40 text-xs md:text-sm">The dedicated team behind this grand celebration</p>
           <div className="section-divider mt-6"></div>
         </div>
 

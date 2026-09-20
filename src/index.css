@@ -293,15 +293,16 @@ body {
 .btn-golden {
   background: linear-gradient(135deg, #FFD700, #FF6600);
   color: #0d0505;
-  font-weight: 700;
-  padding: 14px 35px;
+  font-weight: 600;
+  padding: 10px 24px;
   border-radius: 50px;
   border: none;
   cursor: pointer;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 20px rgba(255,215,0,0.3);
+  box-shadow: 0 4px 15px rgba(255,215,0,0.25);
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.8px;
+  font-size: 0.8rem;
   position: relative;
   overflow: hidden;
 }
@@ -319,24 +320,26 @@ body {
 }
 .btn-golden:hover::after { opacity: 1; left: 100%; }
 .btn-golden:hover {
-  transform: translateY(-4px) scale(1.05);
-  box-shadow: 0 10px 40px rgba(255,215,0,0.5);
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 8px 30px rgba(255,215,0,0.4);
 }
 
 .btn-outline-gold {
   background: transparent;
   color: #FFD700;
-  font-weight: 600;
-  padding: 14px 35px;
+  font-weight: 500;
+  padding: 10px 24px;
   border-radius: 50px;
-  border: 2px solid #FFD700;
+  border: 1.5px solid #FFD700;
   cursor: pointer;
   transition: all 0.4s;
+  font-size: 0.8rem;
+  letter-spacing: 0.8px;
 }
 .btn-outline-gold:hover {
-  background: rgba(255,215,0,0.1);
-  transform: translateY(-4px);
-  box-shadow: 0 4px 25px rgba(255,215,0,0.3);
+  background: rgba(255,215,0,0.08);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 20px rgba(255,215,0,0.25);
 }
 
 /* ============ GRADIENT TEXT ============ */
