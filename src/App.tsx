@@ -819,44 +819,180 @@ function LocationSection() {
   );
 }
 
-// ============ TEAM ============
-function TeamSection() {
-  const team = [
-    { name: 'Rajesh Kumar Sharma', role: 'President', emoji: '👑' },
-    { name: 'Suresh Patel', role: 'Vice President', emoji: '🌟' },
-    { name: 'Amit Joshi', role: 'Secretary', emoji: '📋' },
-    { name: 'Vikram Singh', role: 'Treasurer', emoji: '💰' },
-    { name: 'Mahesh Gupta', role: 'Event Manager', emoji: '🎪' },
-    { name: 'Ramesh Verma', role: 'Decoration Head', emoji: '🎨' },
-    { name: 'Deepak Pandya', role: 'Food Committee', emoji: '🍽️' },
-    { name: 'Kiran Bhatt', role: 'Cultural Head', emoji: '💃' },
-    { name: 'Nitin Shah', role: 'Security Head', emoji: '🛡️' },
-    { name: 'Prakash Mehta', role: 'Transport', emoji: '🚗' },
-    { name: 'Ganesh Tiwari', role: 'Sound & Light', emoji: '🔊' },
-    { name: 'Harsh Desai', role: 'Volunteer Coord.', emoji: '🤝' },
+// ============ MEGA TITLE SECTION ============
+function MegaTitleSection() {
+  return (
+    <section className="py-24 md:py-32 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0d0505] via-[#1a0808] to-[#0d0505]"></div>
+      
+      {/* Mega glow background */}
+      <div className="absolute inset-0 animate-mega-glow-bg"></div>
+      
+      {/* Expanding rings */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+        <div className="w-32 h-32 rounded-full border-2 border-yellow-400/20 animate-ring-expand"></div>
+        <div className="absolute inset-0 w-32 h-32 rounded-full border-2 border-orange-500/20 animate-ring-expand" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute inset-0 w-32 h-32 rounded-full border-2 border-red-500/20 animate-ring-expand" style={{ animationDelay: '2s' }}></div>
+      </div>
+
+      {/* Floating sparkles */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {Array.from({ length: 20 }).map((_, i) => (
+          <div
+            key={i}
+            className="absolute text-yellow-400 animate-sparkle-float"
+            style={{
+              left: `${Math.random() * 100}%`,
+              bottom: '0',
+              animationDelay: `${Math.random() * 3}s`,
+              animationDuration: `${Math.random() * 2 + 2}s`,
+              fontSize: `${Math.random() * 16 + 8}px`,
+            }}
+          >
+            ✦
+          </div>
+        ))}
+      </div>
+
+      <Particles count={30} />
+
+      <div className="relative z-10 max-w-6xl mx-auto px-4 text-center">
+        {/* Decorative top */}
+        <div className="mb-8 flex justify-center items-center space-x-4">
+          <span className="text-4xl md:text-5xl animate-diya">🪔</span>
+          <span className="text-5xl md:text-6xl animate-lotus-spin">🌺</span>
+          <span className="text-4xl md:text-5xl animate-diya" style={{ animationDelay: '1s' }}>🪔</span>
+        </div>
+
+        {/* MEGA TITLE - બોલ મારી અંબે */}
+        <div className="animate-mega-title mb-6">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-black leading-tight animate-mega-shine" style={{ fontFamily: "'Tiro Devanagari Hindi', serif" }}>
+            બોલ મારી અંબે
+          </h1>
+        </div>
+
+        {/* JAY JAY AMBE */}
+        <div className="animate-mega-pulse mb-8">
+          <h2 className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-black animate-glow" style={{ fontFamily: "'Tiro Devanagari Hindi', serif", color: '#FFD700' }}>
+            જય જય અંબે
+          </h2>
+        </div>
+
+        {/* Subtitle with wave */}
+        <div className="animate-mega-wave">
+          <p className="text-xl md:text-3xl text-yellow-300/80 mb-4" style={{ fontFamily: "'Tiro Devanagari Hindi', serif" }}>
+            || જય અંબે ગૌરી, માં શીતલા માયી ||
+          </p>
+        </div>
+
+        <p className="text-base md:text-xl text-yellow-100/50 mb-10">
+          Navratri 2026 • 11 - 19 October • Grand Society Celebration
+        </p>
+
+        {/* Decorative bottom */}
+        <div className="flex justify-center items-center space-x-3">
+          {['🪔', '🌺', '✨', '🙏', '✨', '🌺', '🪔'].map((item, i) => (
+            <span key={i} className="text-2xl md:text-3xl animate-diya" style={{ animationDelay: `${i * 0.3}s` }}>{item}</span>
+          ))}
+        </div>
+
+        {/* Glowing divider */}
+        <div className="mt-12 mx-auto w-3/4 h-1 bg-gradient-to-r from-transparent via-yellow-400 to-transparent animate-mega-pulse rounded-full"></div>
+      </div>
+    </section>
+  );
+}
+
+// ============ ORGANIZER SECTION ============
+function OrganizerSection() {
+  const organizers = [
+    { name: 'હસમુખભાઈ', emoji: '👑' },
+    { name: 'નકુલ', emoji: '⭐' },
+    { name: 'વિનોદ', emoji: '🌟' },
+    { name: 'વિકાસ', emoji: '✨' },
+    { name: 'રાહુલ', emoji: '💫' },
+    { name: 'કરણ', emoji: '🔥' },
+    { name: 'હાર્દિક', emoji: '💎' },
+    { name: 'ધમો', emoji: '🎯' },
+    { name: 'ભીખાભાઈ', emoji: '🏆' },
+    { name: 'રાજુભાઈ', emoji: '🌺' },
+    { name: 'વિકી', emoji: '🎪' },
+    { name: 'દલપતભાઈ', emoji: '🎨' },
+    { name: 'જયેશ', emoji: '🙏' },
+    { name: 'ઉમેશ', emoji: '🪔' },
   ];
 
   return (
-    <section id="team" className="py-20 relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0d0505] via-[#0f0505] to-[#0d0505]"></div>
-      <Particles count={10} />
+    <section id="team" className="py-20 md:py-28 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0d0505] via-[#150808] to-[#0d0505]"></div>
+      
+      {/* Background decorative elements */}
+      <div className="absolute top-0 left-0 w-64 h-64 bg-yellow-400/5 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 right-0 w-64 h-64 bg-red-500/5 rounded-full blur-3xl"></div>
+      
+      <Particles count={20} />
 
       <div className="relative z-10 max-w-6xl mx-auto px-4">
-        <div className="text-center mb-14">
-          <h2 className="text-3xl md:text-5xl font-bold gradient-text mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>
-            👥 Organizing Committee 👥
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <div className="flex justify-center items-center space-x-3 mb-6">
+            <span className="text-3xl md:text-4xl animate-diya">🪔</span>
+            <span className="text-4xl md:text-5xl animate-lotus-spin">🌺</span>
+            <span className="text-3xl md:text-4xl animate-diya" style={{ animationDelay: '1s' }}>🪔</span>
+          </div>
+          
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-black gradient-text mb-4 animate-mega-pulse" style={{ fontFamily: "'Playfair Display', serif" }}>
+            આયોજક સમિતી
           </h2>
-          <div className="section-divider mt-4"></div>
+          <p className="text-xl md:text-2xl text-yellow-400/80 mb-2" style={{ fontFamily: "'Tiro Devanagari Hindi', serif" }}>
+            Organizing Committee
+          </p>
+          <p className="text-yellow-100/40 text-sm md:text-base">The dedicated team behind this grand celebration</p>
+          <div className="section-divider mt-6"></div>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {team.map((member, i) => (
-            <div key={i} className="glossy-card p-4 text-center hover:scale-105 transition-all duration-500 group">
-              <div className="text-3xl mb-2 group-hover:animate-heartbeat">{member.emoji}</div>
-              <h4 className="text-yellow-400 font-bold text-xs md:text-sm mb-1">{member.name}</h4>
-              <p className="text-yellow-100/40 text-xs">{member.role}</p>
+        {/* Organizers Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+          {organizers.map((member, i) => (
+            <div
+              key={i}
+              className="glossy-card p-5 md:p-6 text-center hover:scale-110 transition-all duration-500 group animate-organizer-in animate-organizer-glow"
+              style={{ animationDelay: `${i * 0.1}s` }}
+            >
+              {/* Emoji with animation */}
+              <div className="text-4xl md:text-5xl mb-3 group-hover:animate-heartbeat transition-transform duration-300">
+                {member.emoji}
+              </div>
+              
+              {/* Name with shimmer effect */}
+              <h4 className="text-lg md:text-xl font-bold animate-name-shimmer mb-1" style={{ fontFamily: "'Tiro Devanagari Hindi', serif" }}>
+                {member.name}
+              </h4>
+              
+              {/* Role */}
+              <p className="text-yellow-100/40 text-xs md:text-sm">Organizer</p>
+              
+              {/* Decorative line */}
+              <div className="mt-3 mx-auto w-12 h-0.5 bg-gradient-to-r from-transparent via-yellow-400/50 to-transparent group-hover:w-20 transition-all duration-500"></div>
             </div>
           ))}
+        </div>
+
+        {/* Bottom decorative message */}
+        <div className="mt-16 text-center">
+          <div className="glossy-card p-6 md:p-8 inline-block animate-border-glow">
+            <p className="text-yellow-400 font-bold text-lg md:text-2xl mb-2" style={{ fontFamily: "'Tiro Devanagari Hindi', serif" }}>
+              🙏 સૌનો આભાર 🙏
+            </p>
+            <p className="text-yellow-100/60 text-sm md:text-base">
+              Thank you for making this celebration possible
+            </p>
+            <div className="mt-4 flex justify-center space-x-2">
+              {['🪔', '🌺', '✨', '🙏', '✨', '🌺', '🪔'].map((item, i) => (
+                <span key={i} className="text-xl animate-diya" style={{ animationDelay: `${i * 0.2}s` }}>{item}</span>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -902,14 +1038,15 @@ function Footer() {
         <div className="section-divider my-8"></div>
 
         {/* BIG NAME - Maheriya Nakul */}
-        <div className="my-10">
-          <p className="text-yellow-100/40 text-sm mb-3 uppercase tracking-widest">Website Designed & Developed by</p>
-          <h2 className="text-5xl md:text-7xl lg:text-8xl font-black gradient-text leading-tight" style={{ fontFamily: "'Playfair Display', serif" }}>
+        <div className="my-12">
+          <p className="text-yellow-100/40 text-sm mb-4 uppercase tracking-widest">Website Designed & Developed by</p>
+          <h2 className="text-6xl md:text-8xl lg:text-9xl font-black animate-mega-shine leading-tight animate-mega-title" style={{ fontFamily: "'Playfair Display', serif" }}>
             Maheriya Nakul
           </h2>
-          <div className="mt-4 flex justify-center">
-            <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-yellow-400 to-transparent"></div>
+          <div className="mt-6 flex justify-center">
+            <div className="w-32 h-1 bg-gradient-to-r from-transparent via-yellow-400 to-transparent animate-mega-pulse rounded-full"></div>
           </div>
+          <p className="text-yellow-100/30 text-xs mt-4">© 2026 | Premium Navratri Website</p>
         </div>
 
         <div className="mt-8 p-5 rounded-xl bg-gradient-to-r from-yellow-400/5 to-red-400/5 border border-yellow-400/10">
@@ -950,6 +1087,7 @@ function App() {
           <HeroSection />
           <MarqueeBanner />
           <CountdownClock />
+          <MegaTitleSection />
           <PhotoGallery />
           <AartiSection />
           <PrasadSection />
@@ -957,7 +1095,7 @@ function App() {
           <ScheduleSection />
           <MantrasSection />
           <LocationSection />
-          <TeamSection />
+          <OrganizerSection />
           <Footer />
         </>
       )}

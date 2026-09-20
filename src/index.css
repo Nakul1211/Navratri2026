@@ -311,6 +311,140 @@ body {
   max-height: 80px;
 }
 
+/* ============ MEGA TITLE ANIMATIONS ============ */
+@keyframes megaTitleGlow {
+  0%, 100% { 
+    text-shadow: 0 0 30px #FFD700, 0 0 60px #FF6600, 0 0 90px #DC143C, 0 0 120px #FFD700;
+    transform: scale(1);
+  }
+  25% {
+    text-shadow: 0 0 50px #FFD700, 0 0 100px #FF6600, 0 0 150px #DC143C, 0 0 200px #FFD700, 0 0 250px #FF6600;
+    transform: scale(1.02);
+  }
+  50% { 
+    text-shadow: 0 0 40px #FFD700, 0 0 80px #FF6600, 0 0 120px #DC143C, 0 0 160px #FFD700;
+    transform: scale(1.01);
+  }
+  75% {
+    text-shadow: 0 0 60px #FFD700, 0 0 120px #FF6600, 0 0 180px #DC143C, 0 0 240px #FFD700;
+    transform: scale(1.03);
+  }
+}
+
+@keyframes megaTitleFloat {
+  0%, 100% { transform: translateY(0px) rotateX(0deg); }
+  25% { transform: translateY(-8px) rotateX(2deg); }
+  50% { transform: translateY(-15px) rotateX(0deg); }
+  75% { transform: translateY(-8px) rotateX(-2deg); }
+}
+
+@keyframes megaTitleShine {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes megaTitlePulse {
+  0%, 100% { opacity: 1; filter: brightness(1); }
+  50% { opacity: 0.9; filter: brightness(1.3); }
+}
+
+@keyframes megaTitleWave {
+  0%, 100% { transform: translateY(0) scaleY(1); }
+  25% { transform: translateY(-5px) scaleY(1.05); }
+  50% { transform: translateY(0) scaleY(1); }
+  75% { transform: translateY(5px) scaleY(0.95); }
+}
+
+@keyframes ringExpand {
+  0% { transform: scale(0.5); opacity: 0.8; }
+  100% { transform: scale(3); opacity: 0; }
+}
+
+@keyframes sparkleFloat {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+}
+
+@keyframes megaGlowBg {
+  0%, 100% { background: radial-gradient(ellipse at center, rgba(255,215,0,0.1) 0%, transparent 70%); }
+  50% { background: radial-gradient(ellipse at center, rgba(255,215,0,0.2) 0%, rgba(255,102,0,0.05) 50%, transparent 70%); }
+}
+
+@keyframes organizerCardIn {
+  from { opacity: 0; transform: translateY(30px) scale(0.9); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes organizerGlow {
+  0%, 100% { box-shadow: 0 0 15px rgba(255,215,0,0.1), inset 0 0 15px rgba(255,215,0,0.05); }
+  50% { box-shadow: 0 0 30px rgba(255,215,0,0.3), inset 0 0 30px rgba(255,215,0,0.1); }
+}
+
+@keyframes nameShimmer {
+  0% { background-position: -100% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes lotusSpin {
+  from { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(180deg) scale(1.1); }
+  to { transform: rotate(360deg) scale(1); }
+}
+
+.animate-mega-title {
+  animation: megaTitleGlow 4s ease-in-out infinite, megaTitleFloat 6s ease-in-out infinite;
+}
+
+.animate-mega-shine {
+  background: linear-gradient(90deg, #FFD700, #FF6600, #FFFFFF, #FFD700, #FF6600);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: megaTitleShine 3s linear infinite;
+}
+
+.animate-mega-pulse {
+  animation: megaTitlePulse 2s ease-in-out infinite;
+}
+
+.animate-mega-wave {
+  animation: megaTitleWave 3s ease-in-out infinite;
+}
+
+.animate-ring-expand {
+  animation: ringExpand 3s ease-out infinite;
+}
+
+.animate-sparkle-float {
+  animation: sparkleFloat 3s ease-out infinite;
+}
+
+.animate-mega-glow-bg {
+  animation: megaGlowBg 4s ease-in-out infinite;
+}
+
+.animate-organizer-in {
+  animation: organizerCardIn 0.8s ease-out forwards;
+}
+
+.animate-organizer-glow {
+  animation: organizerGlow 3s ease-in-out infinite;
+}
+
+.animate-name-shimmer {
+  background: linear-gradient(90deg, #FFD700, #FFFFFF, #FFD700);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: nameShimmer 3s linear infinite;
+}
+
+.animate-lotus-spin {
+  animation: lotusSpin 8s linear infinite;
+}
+
 /* ============ RESPONSIVE ============ */
 @media (max-width: 768px) {
   .clock-digit { min-width: 60px; padding: 12px 10px; }
