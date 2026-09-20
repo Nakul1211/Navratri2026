@@ -308,23 +308,8 @@ function MegaTitleSection() {
   );
 }
 
-// ============ PHOTO GALLERY (ONLY 3 PHOTOS) ============
+// ============ PHOTO GALLERY (ONLY 1 PHOTO) ============
 function PhotoGallery() {
-  const images = [
-    { src: 'https://image.qwenlm.ai/generated-images/abe6f77a-991c-4a9e-8c69-4bd6f9760569/_result.png', title: 'Maa Durga Idol', desc: 'Divine decoration of Goddess Durga' },
-    { src: 'https://image.qwenlm.ai/generated-images/b9013c41-a6d7-43d4-ad3b-e0398d728a13/_result.png', title: 'Grand Aarti', desc: 'Sacred evening Aarti ceremony' },
-    { src: 'https://image.qwenlm.ai/generated-images/e8802867-61cb-42a1-8fc0-e06e50311990/_result.png', title: 'Garba Night', desc: 'Traditional Garba & Dandiya Raas' },
-  ];
-
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveIndex(prev => (prev + 1) % images.length);
-    }, 4000);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <section id="gallery" className="py-20 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-[#0d0505] via-[#120606] to-[#0d0505]"></div>
@@ -339,43 +324,22 @@ function PhotoGallery() {
           <div className="section-divider mt-4"></div>
         </div>
 
-        {/* Main Image */}
+        {/* Single Main Image */}
         <div className="relative mb-10">
           <div className="relative rounded-3xl overflow-hidden animate-border-glow border-2 animate-pulse-glow">
             <img
-              src={images[activeIndex].src}
-              alt={images[activeIndex].title}
-              className="w-full h-[280px] md:h-[450px] object-cover transition-all duration-1000 animate-fadeInScale"
-              key={activeIndex}
+              src="https://image.qwenlm.ai/generated-images/abe6f77a-991c-4a9e-8c69-4bd6f9760569/_result.png"
+              alt="Maa Durga Idol"
+              className="w-full h-[300px] md:h-[500px] object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
             <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10">
               <h3 className="text-2xl md:text-3xl font-bold text-yellow-400 mb-2" style={{ fontFamily: "'Playfair Display', serif" }}>
-                {images[activeIndex].title}
+                Maa Durga Idol
               </h3>
-              <p className="text-yellow-100/70">{images[activeIndex].desc}</p>
+              <p className="text-yellow-100/70">Divine decoration of Goddess Durga</p>
             </div>
           </div>
-          <div className="flex justify-center mt-6 space-x-3">
-            {images.map((_, i) => (
-              <button key={i} onClick={() => setActiveIndex(i)}
-                className={`h-3 rounded-full transition-all duration-500 ${i === activeIndex ? 'bg-yellow-400 w-8' : 'bg-yellow-400/30 w-3'}`} />
-            ))}
-          </div>
-        </div>
-
-        {/* Thumbnails - 3 photos */}
-        <div className="grid grid-cols-3 gap-4">
-          {images.map((img, i) => (
-            <div key={i}
-              className={`photo-card-3d cursor-pointer rounded-xl overflow-hidden border-2 transition-all duration-500 ${i === activeIndex ? 'border-yellow-400 scale-105 shadow-lg shadow-yellow-400/20' : 'border-yellow-400/20 opacity-60 hover:opacity-100'}`}
-              onClick={() => setActiveIndex(i)}>
-              <img src={img.src} alt={img.title} className="w-full h-28 md:h-36 object-cover" />
-              <div className="p-2 bg-gradient-to-r from-[#8B0000]/80 to-[#0d0505]/80">
-                <p className="text-yellow-400 text-xs font-medium truncate">{img.title}</p>
-              </div>
-            </div>
-          ))}
         </div>
       </div>
     </section>
@@ -384,12 +348,14 @@ function PhotoGallery() {
 
 // ============ AARTI SECTION ============
 function AartiSection() {
+  const [showDetails, setShowDetails] = useState(false);
+
   return (
     <section id="aarti" className="py-20 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-[#0d0505] via-[#1a0505] to-[#0d0505]"></div>
       <Particles count={20} />
 
-      <div className="relative z-10 max-w-6xl mx-auto px-4">
+      <div className="relative z-10 max-w-4xl mx-auto px-4">
         <div className="text-center mb-14">
           <h2 className="text-3xl md:text-5xl font-bold gradient-text mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>
             🪔 Daily Aarti 🪔
@@ -398,55 +364,52 @@ function AartiSection() {
           <div className="section-divider mt-4"></div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 items-center">
-          <div className="space-y-5">
-            <div className="glossy-card p-6">
-              <div className="flex items-center space-x-3 mb-3">
-                <span className="text-3xl animate-diya">🪔</span>
-                <h3 className="text-yellow-400 font-bold text-xl">Sandhya Aarti</h3>
-              </div>
-              <p className="text-yellow-100/70 text-sm">Every evening at <span className="text-yellow-400 font-bold">7:30 PM</span>, the sacred Aarti ceremony is performed with traditional bells, conch shells, and devotional songs.</p>
-            </div>
-
-            <div className="glossy-card p-6">
-              <div className="flex items-center space-x-3 mb-3">
-                <span className="text-3xl">🔔</span>
-                <h3 className="text-yellow-400 font-bold text-xl">Aarti Mantra</h3>
-              </div>
-              <p className="text-yellow-100/70 text-sm" style={{ fontFamily: "'Tiro Devanagari Hindi', serif" }}>
-                "ॐ जय अम्बे गौरी, माँ शीतला मायी।<br/>
-                सकल सुख कारिणी, विश्व विख्याता ध्यायी॥"
-              </p>
-            </div>
-
-            <div className="glossy-card p-6">
-              <div className="flex items-center space-x-3 mb-3">
-                <span className="text-3xl animate-glow-pulse">✨</span>
-                <h3 className="text-yellow-400 font-bold text-xl">Special Aarti</h3>
-              </div>
-              <p className="text-yellow-100/70 text-sm">On Ashtami & Navami, special Maha Aarti with 108 diyas, flower offerings, and traditional instruments creates a divine atmosphere.</p>
-            </div>
-
-            <div className="text-center mt-4">
-              <div className="inline-flex items-center space-x-3 glossy-card px-6 py-4 animate-border-glow">
-                <span className="text-2xl animate-pendulum">🪔</span>
-                <span className="text-yellow-400 font-bold text-2xl md:text-3xl animate-clock-tick" style={{ fontFamily: "'Playfair Display', serif" }}>
-                  7:30 PM
-                </span>
-                <span className="text-2xl animate-pendulum" style={{ animationDelay: '1s' }}>🪔</span>
-              </div>
-            </div>
+        <div className="text-center">
+          <div className="inline-flex items-center space-x-3 glossy-card px-8 py-5 animate-border-glow mb-8">
+            <span className="text-3xl animate-pendulum">🪔</span>
+            <span className="text-yellow-400 font-bold text-3xl md:text-4xl animate-clock-tick" style={{ fontFamily: "'Playfair Display', serif" }}>
+              7:30 PM
+            </span>
+            <span className="text-3xl animate-pendulum" style={{ animationDelay: '1s' }}>🪔</span>
           </div>
 
-          <div className="relative">
-            <div className="rounded-2xl overflow-hidden border-2 border-yellow-400/30 animate-pulse-glow">
-              <img
-                src="https://image.qwenlm.ai/generated-images/b9013c41-a6d7-43d4-ad3b-e0398d728a13/_result.png"
-                alt="Aarti Ceremony"
-                className="w-full h-[300px] md:h-[400px] object-cover"
-              />
+          <button
+            onClick={() => setShowDetails(!showDetails)}
+            className="btn-golden mt-6"
+          >
+            {showDetails ? 'Hide Details' : 'View Details'} ✨
+          </button>
+
+          {showDetails && (
+            <div className="mt-8 space-y-6 animate-fadeInUp">
+              <div className="glossy-card p-6">
+                <div className="flex items-center space-x-3 mb-3">
+                  <span className="text-3xl animate-diya">🪔</span>
+                  <h3 className="text-yellow-400 font-bold text-xl">Sandhya Aarti</h3>
+                </div>
+                <p className="text-yellow-100/70 text-sm">Every evening at <span className="text-yellow-400 font-bold">7:30 PM</span>, the sacred Aarti ceremony is performed with traditional bells, conch shells, and devotional songs.</p>
+              </div>
+
+              <div className="glossy-card p-6">
+                <div className="flex items-center space-x-3 mb-3">
+                  <span className="text-3xl">🔔</span>
+                  <h3 className="text-yellow-400 font-bold text-xl">Aarti Mantra</h3>
+                </div>
+                <p className="text-yellow-100/70 text-sm" style={{ fontFamily: "'Tiro Devanagari Hindi', serif" }}>
+                  "ॐ जय अम्बे गौरी, माँ शीतला मायी।<br/>
+                  सकल सुख कारिणी, विश्व विख्याता ध्यायी॥"
+                </p>
+              </div>
+
+              <div className="glossy-card p-6">
+                <div className="flex items-center space-x-3 mb-3">
+                  <span className="text-3xl animate-glow-pulse">✨</span>
+                  <h3 className="text-yellow-400 font-bold text-xl">Special Aarti</h3>
+                </div>
+                <p className="text-yellow-100/70 text-sm">On Ashtami & Navami, special Maha Aarti with 108 diyas, flower offerings, and traditional instruments creates a divine atmosphere.</p>
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
     </section>
@@ -455,12 +418,14 @@ function AartiSection() {
 
 // ============ PRASAD SECTION ============
 function PrasadSection() {
+  const [showDetails, setShowDetails] = useState(false);
+
   return (
     <section id="prasad" className="py-20 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-[#0d0505] via-[#100606] to-[#0d0505]"></div>
       <Particles count={15} />
 
-      <div className="relative z-10 max-w-6xl mx-auto px-4">
+      <div className="relative z-10 max-w-4xl mx-auto px-4">
         <div className="text-center mb-14">
           <h2 className="text-3xl md:text-5xl font-bold gradient-text mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>
             🍲 દિવ્ય પ્રસાદ 🍲
@@ -469,58 +434,57 @@ function PrasadSection() {
           <div className="section-divider mt-4"></div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 items-center">
-          <div className="relative">
-            <div className="rounded-2xl overflow-hidden border-2 border-yellow-400/30 animate-pulse-glow">
-              <img
-                src="https://image.qwenlm.ai/generated-images/37c36d06-ed74-456f-a36a-a173fd050bd1/_result.png"
-                alt="Divine Prasad"
-                className="w-full h-[300px] md:h-[400px] object-cover"
-              />
-            </div>
-          </div>
+        <div className="text-center">
+          <button
+            onClick={() => setShowDetails(!showDetails)}
+            className="btn-golden mt-6"
+          >
+            {showDetails ? 'Hide Details' : 'View Prasad Menu'} 🍽️
+          </button>
 
-          <div className="space-y-4">
-            <div className="glossy-card p-5">
-              <div className="flex items-center space-x-3">
-                <span className="text-3xl">🫓</span>
-                <div>
-                  <h4 className="text-yellow-400 font-bold">Halwa - Puri - Chana</h4>
-                  <p className="text-yellow-100/60 text-sm">Traditional Navratri bhog served daily</p>
+          {showDetails && (
+            <div className="mt-8 space-y-4 animate-fadeInUp">
+              <div className="glossy-card p-5">
+                <div className="flex items-center space-x-3">
+                  <span className="text-3xl">🫓</span>
+                  <div>
+                    <h4 className="text-yellow-400 font-bold">Halwa - Puri - Chana</h4>
+                    <p className="text-yellow-100/60 text-sm">Traditional Navratri bhog served daily</p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="glossy-card p-5">
-              <div className="flex items-center space-x-3">
-                <span className="text-3xl">🥥</span>
-                <div>
-                  <h4 className="text-yellow-400 font-bold">Coconut & Fruits</h4>
-                  <p className="text-yellow-100/60 text-sm">Sacred coconut and seasonal fruits prasad</p>
+              <div className="glossy-card p-5">
+                <div className="flex items-center space-x-3">
+                  <span className="text-3xl">🥥</span>
+                  <div>
+                    <h4 className="text-yellow-400 font-bold">Coconut & Fruits</h4>
+                    <p className="text-yellow-100/60 text-sm">Sacred coconut and seasonal fruits prasad</p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="glossy-card p-5">
-              <div className="flex items-center space-x-3">
-                <span className="text-3xl">🍬</span>
-                <div>
-                  <h4 className="text-yellow-400 font-bold">Mithai & Sweets</h4>
-                  <p className="text-yellow-100/60 text-sm">Special sweets on Ashtami & Navami</p>
+              <div className="glossy-card p-5">
+                <div className="flex items-center space-x-3">
+                  <span className="text-3xl">🍬</span>
+                  <div>
+                    <h4 className="text-yellow-400 font-bold">Mithai & Sweets</h4>
+                    <p className="text-yellow-100/60 text-sm">Special sweets on Ashtami & Navami</p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="glossy-card p-5">
-              <div className="flex items-center space-x-3">
-                <span className="text-3xl">🍚</span>
-                <div>
-                  <h4 className="text-yellow-400 font-bold">Annaprashan Bhog</h4>
-                  <p className="text-yellow-100/60 text-sm">Grand feast on Ashtami - Khichdi, Puri, Halwa</p>
+              <div className="glossy-card p-5">
+                <div className="flex items-center space-x-3">
+                  <span className="text-3xl">🍚</span>
+                  <div>
+                    <h4 className="text-yellow-400 font-bold">Annaprashan Bhog</h4>
+                    <p className="text-yellow-100/60 text-sm">Grand feast on Ashtami - Khichdi, Puri, Halwa</p>
+                  </div>
                 </div>
               </div>
+              <p className="text-yellow-100/40 text-sm text-center italic mt-6">
+                "Prasad is distributed after every Aarti ceremony"
+              </p>
             </div>
-            <p className="text-yellow-100/40 text-sm text-center italic">
-              "Prasad is distributed after every Aarti ceremony"
-            </p>
-          </div>
+          )}
         </div>
       </div>
     </section>
@@ -529,12 +493,14 @@ function PrasadSection() {
 
 // ============ GARBA SECTION ============
 function GarbaSection() {
+  const [showDetails, setShowDetails] = useState(false);
+
   return (
     <section id="garba" className="py-20 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-[#0d0505] via-[#150505] to-[#0d0505]"></div>
       <Particles count={25} />
 
-      <div className="relative z-10 max-w-6xl mx-auto px-4">
+      <div className="relative z-10 max-w-4xl mx-auto px-4">
         <div className="text-center mb-14">
           <h2 className="text-3xl md:text-5xl font-bold gradient-text mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>
             💃 Garba Nights 💃
@@ -543,66 +509,63 @@ function GarbaSection() {
           <div className="section-divider mt-4"></div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 items-center">
-          <div className="space-y-4 order-2 md:order-1">
-            <div className="glossy-card p-5">
-              <div className="flex items-center space-x-3">
-                <span className="text-3xl animate-diya">🕙</span>
-                <div>
-                  <h4 className="text-yellow-400 font-bold text-lg">10:30 PM - Garba Begins</h4>
-                  <p className="text-yellow-100/60 text-sm">After Aarti, the dance floor comes alive</p>
-                </div>
-              </div>
-            </div>
-            <div className="glossy-card p-5">
-              <div className="flex items-center space-x-3">
-                <span className="text-3xl">🥁</span>
-                <div>
-                  <h4 className="text-yellow-400 font-bold">Live Dhol & Orchestra</h4>
-                  <p className="text-yellow-100/60 text-sm">Traditional Garba music with DJ & live band</p>
-                </div>
-              </div>
-            </div>
-            <div className="glossy-card p-5">
-              <div className="flex items-center space-x-3">
-                <span className="text-3xl">💃</span>
-                <div>
-                  <h4 className="text-yellow-400 font-bold">Traditional Garba & Dandiya</h4>
-                  <p className="text-yellow-100/60 text-sm">All age groups welcome • Free entry</p>
-                </div>
-              </div>
-            </div>
-            <div className="glossy-card p-5">
-              <div className="flex items-center space-x-3">
-                <span className="text-3xl">🏆</span>
-                <div>
-                  <h4 className="text-yellow-400 font-bold">Competition & Prizes</h4>
-                  <p className="text-yellow-100/60 text-sm">Best costume & dance competition with prizes</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="relative order-1 md:order-2">
-            <div className="rounded-2xl overflow-hidden border-2 border-yellow-400/30 animate-pulse-glow">
-              <img
-                src="https://image.qwenlm.ai/generated-images/e8802867-61cb-42a1-8fc0-e06e50311990/_result.png"
-                alt="Garba Night"
-                className="w-full h-[300px] md:h-[400px] object-cover"
-              />
-            </div>
-          </div>
-        </div>
-
-        <div className="text-center mt-14">
-          <div className="inline-flex items-center space-x-4 glossy-card px-8 py-5 animate-border-glow">
+        <div className="text-center">
+          <div className="inline-flex items-center space-x-4 glossy-card px-8 py-5 animate-border-glow mb-8">
             <span className="text-3xl animate-diya">💃</span>
-            <span className="text-yellow-400 font-bold text-2xl md:text-4xl animate-clock-tick" style={{ fontFamily: "'Playfair Display', serif" }}>
+            <span className="text-yellow-400 font-bold text-3xl md:text-4xl animate-clock-tick" style={{ fontFamily: "'Playfair Display', serif" }}>
               10:30 PM
             </span>
             <span className="text-3xl animate-diya" style={{ animationDelay: '1s' }}>🕺</span>
           </div>
-          <p className="text-yellow-100/40 mt-4 text-sm">Garba starts after Aarti ceremony every night</p>
+
+          <button
+            onClick={() => setShowDetails(!showDetails)}
+            className="btn-golden mt-6"
+          >
+            {showDetails ? 'Hide Details' : 'View Garba Details'} 💃
+          </button>
+
+          {showDetails && (
+            <div className="mt-8 space-y-4 animate-fadeInUp">
+              <div className="glossy-card p-5">
+                <div className="flex items-center space-x-3">
+                  <span className="text-3xl animate-diya">🕙</span>
+                  <div>
+                    <h4 className="text-yellow-400 font-bold text-lg">10:30 PM - Garba Begins</h4>
+                    <p className="text-yellow-100/60 text-sm">After Aarti, the dance floor comes alive</p>
+                  </div>
+                </div>
+              </div>
+              <div className="glossy-card p-5">
+                <div className="flex items-center space-x-3">
+                  <span className="text-3xl">🥁</span>
+                  <div>
+                    <h4 className="text-yellow-400 font-bold">Live Dhol & Orchestra</h4>
+                    <p className="text-yellow-100/60 text-sm">Traditional Garba music with DJ & live band</p>
+                  </div>
+                </div>
+              </div>
+              <div className="glossy-card p-5">
+                <div className="flex items-center space-x-3">
+                  <span className="text-3xl">💃</span>
+                  <div>
+                    <h4 className="text-yellow-400 font-bold">Traditional Garba & Dandiya</h4>
+                    <p className="text-yellow-100/60 text-sm">All age groups welcome • Free entry</p>
+                  </div>
+                </div>
+              </div>
+              <div className="glossy-card p-5">
+                <div className="flex items-center space-x-3">
+                  <span className="text-3xl">🏆</span>
+                  <div>
+                    <h4 className="text-yellow-400 font-bold">Competition & Prizes</h4>
+                    <p className="text-yellow-100/60 text-sm">Best costume & dance competition with prizes</p>
+                  </div>
+                </div>
+              </div>
+              <p className="text-yellow-100/40 mt-4 text-sm">Garba starts after Aarti ceremony every night</p>
+            </div>
+          )}
         </div>
       </div>
     </section>
@@ -701,7 +664,7 @@ function LocationSection() {
                 <span className="text-2xl">🏛️</span>
                 <div>
                   <h4 className="text-yellow-400 font-bold">Venue</h4>
-                  <p className="text-yellow-100/70 text-sm">Society Community Hall & Open Ground</p>
+                  <p className="text-yellow-100/70 text-sm">Purusharthi Nagar Society</p>
                 </div>
               </div>
             </div>
@@ -735,12 +698,19 @@ function LocationSection() {
           </div>
 
           <div className="flex flex-col justify-center items-center space-y-6">
-            <div className="glossy-card p-8 w-full text-center animate-pulse-glow">
-              <span className="text-6xl block mb-4">🗺️</span>
-              <p className="text-yellow-400 font-bold text-lg">Society Pandal</p>
-              <p className="text-yellow-100/50 text-sm mt-2">Main Road, Society Complex</p>
+            <div className="glossy-card p-2 w-full animate-pulse-glow">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.151564796195!2d72.56312717625987!3d23.0549043151191!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e8569c5f49f83%3A0x197806e0ebacb2ee!2sPurusharthi%20Nagar%20Society!5e0!3m2!1sen!2sin!4v1789918330065!5m2!1sen!2sin" 
+                width="100%" 
+                height="300" 
+                style={{ border: 0, borderRadius: '16px' }}
+                allowFullScreen 
+                loading="lazy" 
+                referrerPolicy="strict-origin-when-cross-origin"
+                title="Location Map"
+              ></iframe>
             </div>
-            <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" className="btn-golden w-full text-center block">
+            <a href="https://maps.google.com/?q=Purusharthi+Nagar+Society" target="_blank" rel="noopener noreferrer" className="btn-golden w-full text-center block">
               📍 Get Directions
             </a>
           </div>
@@ -767,6 +737,8 @@ function OrganizerSection() {
     { name: 'દલપતભાઈ', emoji: '🎨' },
     { name: 'જયેશ', emoji: '🙏' },
     { name: 'ઉમેશ', emoji: '🪔' },
+    { name: 'કાલિશ', emoji: '🌟' },
+    { name: 'ચેતન', emoji: '✨' },
   ];
 
   return (
