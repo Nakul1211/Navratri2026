@@ -296,16 +296,6 @@ function MegaTitleSection() {
           </h2>
         </div>
 
-        <div className="animate-mega-wave">
-          <p className="text-xl md:text-3xl text-yellow-300/80 mb-4" style={{ fontFamily: "'Tiro Devanagari Hindi', serif" }}>
-            || જય અંબે ગૌરી, માં શીતલા માયી ||
-          </p>
-        </div>
-
-        <p className="text-base md:text-xl text-yellow-100/50 mb-10">
-          Navratri 2026 • 11 - 19 October • Grand Society Celebration
-        </p>
-
         <div className="flex justify-center items-center space-x-3">
           {['🪔', '🌺', '✨', '🙏', '✨', '🌺', '🪔'].map((item, i) => (
             <span key={i} className="text-2xl md:text-3xl animate-diya" style={{ animationDelay: `${i * 0.3}s` }}>{item}</span>
@@ -456,9 +446,6 @@ function AartiSection() {
                 className="w-full h-[300px] md:h-[400px] object-cover"
               />
             </div>
-            <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 glossy-card px-6 py-3 animate-heartbeat">
-              <span className="text-yellow-400 font-bold text-lg md:text-xl">🕖 7:30 PM Daily</span>
-            </div>
           </div>
         </div>
       </div>
@@ -476,9 +463,9 @@ function PrasadSection() {
       <div className="relative z-10 max-w-6xl mx-auto px-4">
         <div className="text-center mb-14">
           <h2 className="text-3xl md:text-5xl font-bold gradient-text mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>
-            🍲 Divine Prasad 🍲
+            🍲 દિવ્ય પ્રસાદ 🍲
           </h2>
-          <p className="text-yellow-100/50 text-lg">Holy offerings blessed by Maa Durga</p>
+          <p className="text-yellow-100/50 text-lg">માતાજીના આશીર્વાદથી પ્રસાદ</p>
           <div className="section-divider mt-4"></div>
         </div>
 
@@ -604,9 +591,6 @@ function GarbaSection() {
                 className="w-full h-[300px] md:h-[400px] object-cover"
               />
             </div>
-            <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 glossy-card px-6 py-3 animate-heartbeat">
-              <span className="text-yellow-400 font-bold text-lg md:text-xl">🕥 10:30 PM Nightly</span>
-            </div>
           </div>
         </div>
 
@@ -625,162 +609,69 @@ function GarbaSection() {
   );
 }
 
-// ============ SCHEDULE - DAY BY DAY EXPANDING ============
+// ============ SCHEDULE - COMPACT DAYS ============
 function ScheduleSection() {
-  const [expandedDay, setExpandedDay] = useState<number | null>(null);
-  const [autoExpand, setAutoExpand] = useState(0);
-
   const schedule = [
-    { day: 1, date: '11 Oct', name: 'Pratipada', deity: 'Shailaputri', color: '#FF6B6B', aarti: '7:30 PM', garba: '10:30 PM', desc: 'Goddess who rides a lion, daughter of the mountain' },
-    { day: 2, date: '12 Oct', name: 'Dwitiya', deity: 'Brahmacharini', color: '#FFA500', aarti: '7:30 PM', garba: '10:30 PM', desc: 'The ascetic form, penance and devotion' },
-    { day: 3, date: '13 Oct', name: 'Tritiya', deity: 'Chandraghanta', color: '#FFD700', aarti: '7:30 PM', garba: '10:30 PM', desc: 'Half-moon shaped like a bell, bestower of grace' },
-    { day: 4, date: '14 Oct', name: 'Chaturthi', deity: 'Kushmanda', color: '#4CAF50', aarti: '7:30 PM', garba: '10:30 PM', desc: 'Creator of the universe, source of cosmic energy' },
-    { day: 5, date: '15 Oct', name: 'Panchami', deity: 'Skandamata', color: '#00BCD4', aarti: '7:30 PM', garba: '10:30 PM', desc: 'Mother of Lord Kartikeya, bestower of salvation' },
-    { day: 6, date: '16 Oct', name: 'Shashthi', deity: 'Katyayani', color: '#3F51B5', aarti: '7:30 PM', garba: '10:30 PM', desc: 'Warrior goddess, destroyer of evil forces' },
-    { day: 7, date: '17 Oct', name: 'Saptami', deity: 'Kalaratri', color: '#9C27B0', aarti: '7:30 PM', garba: '10:30 PM', desc: 'The fierce dark night, remover of darkness' },
-    { day: 8, date: '18 Oct', name: 'Ashtami', deity: 'Mahagauri', color: '#E91E63', aarti: '7:30 PM', garba: '10:30 PM', desc: 'The extremely white radiant one, Maha Aarti special' },
-    { day: 9, date: '19 Oct', name: 'Navami', deity: 'Siddhidatri', color: '#FF5722', aarti: '7:30 PM', garba: '10:30 PM', desc: 'Bestower of all supernatural powers • Final Day' },
+    { day: 1, date: '11 Oct', name: 'પ્રતિપદા', deity: 'શૈલપુત્રી', color: '#FF6B6B' },
+    { day: 2, date: '12 Oct', name: 'દ્વિતીયા', deity: 'બ્રહ્મચારિણી', color: '#FFA500' },
+    { day: 3, date: '13 Oct', name: 'તૃતીયા', deity: 'ચંદ્રઘંટા', color: '#FFD700' },
+    { day: 4, date: '14 Oct', name: 'ચતુર્થી', deity: 'કૂષ્માંડા', color: '#4CAF50' },
+    { day: 5, date: '15 Oct', name: 'પંચમી', deity: 'સ્કંદમાતા', color: '#00BCD4' },
+    { day: 6, date: '16 Oct', name: 'ષષ્ઠી', deity: 'કાત્યાયની', color: '#3F51B5' },
+    { day: 7, date: '17 Oct', name: 'સપ્તમી', deity: 'કાલરાત્રી', color: '#9C27B0' },
+    { day: 8, date: '18 Oct', name: 'અષ્ટમી', deity: 'મહાગૌરી', color: '#E91E63' },
+    { day: 9, date: '19 Oct', name: 'નવમી', deity: 'સિદ્ધિદાત્રી', color: '#FF5722' },
   ];
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setAutoExpand(prev => {
-        const next = (prev + 1) % schedule.length;
-        setExpandedDay(next);
-        return next;
-      });
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
-
-  const handleDayClick = useCallback((day: number) => {
-    setExpandedDay(expandedDay === day ? null : day);
-  }, [expandedDay]);
 
   return (
     <section id="schedule" className="py-20 relative">
       <div className="absolute inset-0 bg-gradient-to-b from-[#0d0505] via-[#100505] to-[#0d0505]"></div>
       <Particles count={15} />
 
-      <div className="relative z-10 max-w-4xl mx-auto px-4">
+      <div className="relative z-10 max-w-5xl mx-auto px-4">
         <div className="text-center mb-14">
           <h2 className="text-3xl md:text-5xl font-bold gradient-text mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>
-            📅 Nine Divine Days 📅
+            📅 નવ દિવ્ય દિવસો 📅
           </h2>
           <p className="text-yellow-100/50 text-lg">11 October – 19 October 2026</p>
           <div className="section-divider mt-4"></div>
         </div>
 
-        <div className="relative">
-          <div className="absolute left-6 md:left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-yellow-400 via-red-500 to-yellow-400 opacity-30"></div>
-
+        <div className="grid grid-cols-3 md:grid-cols-3 gap-3 md:gap-4">
           {schedule.map((item, i) => (
             <div
               key={i}
-              className={`relative mb-4 transition-all duration-700 ease-out ${expandedDay === i ? 'z-10' : 'z-0'}`}
-              style={{ animationDelay: `${i * 0.1}s` }}
+              className="glossy-card p-4 md:p-5 text-center hover:scale-105 transition-all duration-500 group animate-organizer-in"
+              style={{ animationDelay: `${i * 0.08}s` }}
             >
-              <div className={`absolute left-4 md:left-6 top-6 w-5 h-5 rounded-full border-2 transition-all duration-500 ${expandedDay === i ? 'scale-150 border-yellow-400 bg-yellow-400 shadow-lg shadow-yellow-400/50' : 'border-yellow-400/40 bg-transparent'}`}>
-                {expandedDay === i && <div className="absolute inset-0 rounded-full bg-yellow-400" style={{ animation: 'ripple 2s ease-out infinite' }}></div>}
+              {/* Day number with color accent */}
+              <div className="relative mb-2">
+                <span className="text-3xl md:text-4xl font-black" style={{ color: item.color, fontFamily: "'Playfair Display', serif" }}>
+                  {item.day}
+                </span>
+                <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-8 h-0.5 rounded-full" style={{ background: item.color }}></div>
               </div>
-
-              <div
-                className={`ml-14 md:ml-16 cursor-pointer transition-all duration-700 ease-out ${expandedDay === i ? 'expanded' : 'collapsed'}`}
-                onClick={() => handleDayClick(i)}
-              >
-                <div className={`glossy-card overflow-hidden transition-all duration-500 ${expandedDay === i ? 'border-yellow-400/60 animate-pulse-glow' : ''}`}>
-                  <div className="p-4 md:p-5 flex items-center justify-between">
-                    <div className="flex items-center space-x-3">
-                      <span className="text-2xl md:text-3xl font-black" style={{ color: item.color, fontFamily: "'Playfair Display', serif" }}>
-                        {item.day}
-                      </span>
-                      <div>
-                        <h3 className="text-yellow-400 font-bold text-base md:text-lg">{item.name}</h3>
-                        <p className="text-yellow-100/50 text-xs">{item.date} • {item.deity}</p>
-                      </div>
-                    </div>
-                    <span className={`text-yellow-400 transition-transform duration-500 text-xl ${expandedDay === i ? 'rotate-180' : ''}`}>▼</span>
-                  </div>
-
-                  {expandedDay === i && (
-                    <div className="px-4 md:px-5 pb-5 animate-fadeInUp">
-                      <div className="border-t border-yellow-400/10 pt-4 space-y-3">
-                        <p className="text-yellow-100/70 text-sm">{item.desc}</p>
-                        <div className="grid grid-cols-2 gap-3">
-                          <div className="bg-yellow-400/5 rounded-lg p-3 text-center">
-                            <span className="text-yellow-400 text-xs block">🪔 Aarti</span>
-                            <span className="text-yellow-100 font-bold text-sm">{item.aarti}</span>
-                          </div>
-                          <div className="bg-yellow-400/5 rounded-lg p-3 text-center">
-                            <span className="text-yellow-400 text-xs block">💃 Garba</span>
-                            <span className="text-yellow-100 font-bold text-sm">{item.garba}</span>
-                          </div>
-                        </div>
-                        <div className="flex items-center space-x-2 text-xs text-yellow-100/40">
-                          <span>🍲 Prasad after Aarti</span>
-                          <span>•</span>
-                          <span>🎵 Live Music</span>
-                        </div>
-                      </div>
-                    </div>
-                  )}
-                </div>
-              </div>
+              
+              {/* Date */}
+              <p className="text-yellow-100/50 text-xs mb-2">{item.date}</p>
+              
+              {/* Day name in Gujarati */}
+              <h3 className="text-yellow-400 font-bold text-sm md:text-base mb-1" style={{ fontFamily: "'Tiro Devanagari Hindi', serif" }}>
+                {item.name}
+              </h3>
+              
+              {/* Deity name in Gujarati */}
+              <p className="text-yellow-100/60 text-xs md:text-sm" style={{ fontFamily: "'Tiro Devanagari Hindi', serif" }}>
+                {item.deity}
+              </p>
             </div>
           ))}
         </div>
 
         <div className="mt-10 text-center">
           <div className="glossy-card p-6 inline-block animate-border-glow">
-            <p className="text-yellow-400 font-bold text-lg">🎊 19 October - Monday - Vijayadashami 🎊</p>
+            <p className="text-yellow-400 font-bold text-lg">🎊 19 October - Monday - વિજયાદશમી 🎊</p>
             <p className="text-yellow-100/50 text-sm mt-1">Grand Visarjan & Celebration Conclusion</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-// ============ MANTRAS ============
-function MantrasSection() {
-  const mantras = [
-    { sanskrit: "ॐ दुर्गायै नमः", meaning: "Salutations to Goddess Durga" },
-    { sanskrit: "ॐ सर्वमंगल मांगल्ये शिवे सर्वार्थ साधिके। शरण्ये त्र्यम्बके गौरि नारायणि नमोऽस्तु ते॥", meaning: "O Narayani, you are the auspiciousness of all" },
-    { sanskrit: "ॐ ऐं ह्रीं क्लीं चामुण्डायै विच्चे", meaning: "Navakshari mantra - destroys negativity" },
-    { sanskrit: "या देवी सर्वभूतेषु शक्तिरूपेण संस्थिता। नमस्तस्यै नमस्तस्यै नमस्तस्यै नमो नमः॥", meaning: "To the Goddess who resides as energy in all beings" },
-  ];
-
-  const [active, setActive] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => setActive(prev => (prev + 1) % mantras.length), 5000);
-    return () => clearInterval(interval);
-  }, []);
-
-  return (
-    <section className="py-20 relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0d0505] via-[#150808] to-[#0d0505]"></div>
-      <Particles count={15} />
-
-      <div className="relative z-10 max-w-4xl mx-auto px-4">
-        <div className="text-center mb-14">
-          <h2 className="text-3xl md:text-5xl font-bold gradient-text mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>
-            🙏 Sacred Mantras 🙏
-          </h2>
-          <div className="section-divider mt-4"></div>
-        </div>
-
-        <div className="glossy-card p-8 md:p-12 text-center animate-pulse-glow">
-          <div className="text-4xl mb-4 animate-diya">🪔</div>
-          <p className="text-xl md:text-3xl text-yellow-400 mb-4 leading-relaxed" style={{ fontFamily: "'Tiro Devanagari Hindi', serif" }}>
-            {mantras[active].sanskrit}
-          </p>
-          <p className="text-yellow-100/60 italic">"{mantras[active].meaning}"</p>
-          <div className="flex justify-center mt-6 space-x-2">
-            {mantras.map((_, i) => (
-              <button key={i} onClick={() => setActive(i)}
-                className={`h-2 rounded-full transition-all ${i === active ? 'bg-yellow-400 w-6' : 'bg-yellow-400/30 w-2'}`} />
-            ))}
           </div>
         </div>
       </div>
@@ -1038,7 +929,6 @@ function App() {
           <PrasadSection />
           <GarbaSection />
           <ScheduleSection />
-          <MantrasSection />
           <LocationSection />
           <OrganizerSection />
           <Footer />
