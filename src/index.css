@@ -347,19 +347,19 @@ body {
   background: linear-gradient(135deg, #1a237e, #3949ab);
   color: #ffffff;
   font-weight: 600;
-  padding: 12px 32px;
-  border-radius: 30px;
+  padding: 8px 20px;
+  border-radius: 25px;
   border: none;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 20px rgba(26, 35, 126, 0.4);
-  letter-spacing: 0.8px;
-  font-size: 0.9rem;
+  box-shadow: 0 3px 15px rgba(26, 35, 126, 0.35);
+  letter-spacing: 0.5px;
+  font-size: 0.75rem;
   text-transform: uppercase;
 }
 .btn-payment:hover {
-  transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 8px 30px rgba(26, 35, 126, 0.6);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 25px rgba(26, 35, 126, 0.5);
 }
 
 /* ============ GRADIENT TEXT ============ */

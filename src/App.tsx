@@ -837,7 +837,7 @@ function MarqueeBanner() {
 function PaymentSection() {
   const handlePayment = () => {
     const options = {
-      key: 'rzp_test_YourTestKeyHere', // Replace with your Razorpay test key
+      key: 'rzp_test_Tb2rHu5itdMPn9', // Your Razorpay test key
       amount: 250000, // Amount in paise (₹2500 = 250000 paise)
       currency: 'INR',
       name: 'Navratri 2026 - Purusharthi Nagar Society',
@@ -912,9 +912,9 @@ function PaymentSection() {
 
           <button
             onClick={handlePayment}
-            className="btn-payment w-full md:w-auto"
+            className="btn-payment"
           >
-            💳 Pay ₹2,500 Now
+            💳 Pay ₹2,500
           </button>
 
           <p className="text-yellow-100/40 text-xs mt-6">
